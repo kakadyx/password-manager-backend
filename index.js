@@ -3,12 +3,13 @@ import mongoose from 'mongoose'
 import userRouter from './routers/userRouter.js'
 import groupRouter from './routers/groupRouter.js'
 import passwordRouter from './routers/passwordRouter.js'
+import cors from 'cors'
 
-const PORT = 3232
-const DB_URL = ''
+const PORT = 4444
+const DB_URL = `mongodb+srv://admin:admin@cluster0.2miju.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 
 const server = express()
-
+server.use(cors())
 server.use(express.json())
 
 server.use('/api', userRouter)
